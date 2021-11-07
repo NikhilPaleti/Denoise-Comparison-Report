@@ -6,6 +6,7 @@ Goals:
     -> (Depending on Time) Make a .ipynb file, with all steps, making a detailed comparison
 
 Dataset:
+    
     -> Procure (upto) 10 High-Definition Images of varying subjects 
-    (OR) 
+    (OR)     
     -> We can load MNSIT Dataset and use it as before
