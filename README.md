@@ -1,5 +1,5 @@
 Goals:
-    -> Create a Wiener Filter Python code
+    -> Create a Median Filter Python code
     -> Create a BM3D Filter Python code
     -> Create functions for PSNR, SSIM
     -> (Optional) Add a timer to measure code execution time
