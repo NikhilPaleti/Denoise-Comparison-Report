@@ -1,4 +1,5 @@
 Goals:
+    
     -> Create a Median Filter Python code
     -> Create a BM3D Filter Python code
     -> Create functions for PSNR, SSIM
