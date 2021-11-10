@@ -9,4 +9,5 @@ def PSNR (original, processed):
     return (20*np.log10(PIXEL_MAX/np.sqrt(error)))
 
 def SSIM (original, processed):
-    return structural_similarity(original, processed, multichannel=True)
+    return (structural_similarity (original, processed, multichannel=True))
+    
