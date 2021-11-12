@@ -8,7 +8,6 @@ from tests import PSNR, SSIM
 
 def grayscale(img):
 	return np.dot(img[...,:3], [0.2989, 0.5870, 0.1140])
-    # return np.dot(img[...,:3], [0.299, 0.587, 0.114])
 
 def median_filter(data, kernel_size):
     temp = []
@@ -32,3 +31,9 @@ def median_filter(data, kernel_size):
             data_final[i][j] = temp[len(temp) // 2]
             temp = []
     return data_final
+
+images = ["pixel.jpg", "1to1.jpg", "fashion.jpg", "lena.jpg", "nature.jpg"]
+times_list = []
+ssim_list = []
+psnr_list = []
+
