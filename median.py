@@ -32,7 +32,7 @@ def median_filter(data, kernel_size):
             temp = []
     return data_final
 
-images = ["pixel.jpg", "1to1.jpg", "fashion.jpg", "lena.jpg", "nature.jpg"]
+images = ["dataset/pixel.jpg", "dataset/1to1.jpg", "dataset/fashion.jpg", "dataset/lena.jpg", "dataset/nature.jpg"]
 times_list = []
 ssim_list = []
 psnr_list = []

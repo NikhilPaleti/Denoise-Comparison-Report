@@ -10,7 +10,7 @@ from tests import PSNR, SSIM
 def grayscale(img):
     return np.dot(img[...,:3], [0.299, 0.587, 0.114])
 
-images = ["pixel.jpg", "1to1.jpg", "fashion.jpg", "lena.jpg", "nature.jpg"]
+images = ["dataset/pixel.jpg", "dataset/1to1.jpg", "dataset/fashion.jpg", "dataset/lena.jpg", "dataset/nature.jpg"]
 times_list = []
 ssim_list = []
 psnr_list = []
