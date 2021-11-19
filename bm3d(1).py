@@ -14,4 +14,5 @@ images = ["dataset/pixel.jpg", "dataset/1to1.jpg", "dataset/fashion.jpg", "datas
 times_list = []
 ssim_list = []
 psnr_list = []
-
+psnr_noisy_list = []
+ssim_noisy_list = []
