@@ -8,7 +8,7 @@ from noise import add_noise
 from tests import PSNR, SSIM
 
 def grayscale(img):
-	return np.dot(img[...,:3], [0.2989, 0.5870, 0.1140])
+	return np.dot(img[...,:3], [0.299, 0.587, 0.114])
 
 def median_filter(data, kernel_size):
     temp = []
@@ -47,7 +47,7 @@ for image in images:
     noisy_img = add_noise(img, 0.1)
 
     start = time.time()
-    denoised_img = median_filter(noisy_img, 5)
+    denoised_img = median_filter(noisy_img, 3)
     end = time.time()
     times_list.append(end - start)
 
@@ -66,7 +66,12 @@ for image in images:
             plt.imshow(display[i], cmap = 'gray')
             plt.title(label[i])
 
-    plt.show()
+    # print(img.shape)
+    # print(noisy_img.shape)
+    # print(denoised_img.shape)
+
+
+    # plt.show()
     # image=image.replace("dataset/", "processed/")
     # matplotlib.image.imsave(image, denoised_img, cmap='gray')
 
