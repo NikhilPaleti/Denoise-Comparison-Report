@@ -16,7 +16,7 @@ ssim_list = []
 psnr_list = []
 psnr_noisy_list = []
 ssim_noisy_list = []
-
+ 
 for image in images:
     image = os.path.join(image) 
     img = grayscale(plt.imread(image))

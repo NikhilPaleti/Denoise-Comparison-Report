@@ -1,5 +1,6 @@
 import os
 import time
+import bm3d
 import numpy as np
 import matplotlib.pyplot as plt
 import matplotlib
@@ -33,12 +34,12 @@ def median_filter(data, kernel_size):
             temp = []
     return data_final
 
-images = ["dataset/pixel.jpg", "dataset/1to1.jpg", "dataset/fashion.jpg", "dataset/lena.jpg", "dataset/nature.jpg"]
+images = ["dataset/pixel.jpg", "dataset/1to1.jpg", "dataset/fractal.jpg", "dataset/lena.jpg", "dataset/nature.jpg"]
 times_list = []
 ssim_list = []
 psnr_list = []
-# psnr_noisy_list = []
-# ssim_noisy_list = []
+psnr_noisy_list = []
+ssim_noisy_list = []
 
 for image in images:
     image = os.path.join(image) 
@@ -47,14 +48,15 @@ for image in images:
     noisy_img = add_noise(img, 0.1)
 
     start = time.time()
+    # denoise = bm3d.bm3d(noisy_img, sigma_psd=.1, stage_arg=noisy_img)
     denoised_img = median_filter(noisy_img, 3)
     end = time.time()
     times_list.append(end - start)
 
     psnr_list.append(PSNR(img, denoised_img))
     ssim_list.append(SSIM(img, denoised_img))
-    # psnr_noisy_list.append(PSNR(img, noisy_img))
-    # ssim_noisy_list.append(SSIM(img, noisy_img))
+    psnr_noisy_list.append(PSNR(img, noisy_img))
+    ssim_noisy_list.append(SSIM(img, noisy_img))
 
 
     display = [img, noisy_img, denoised_img]
@@ -79,5 +81,5 @@ for image in images:
 print('PSNR: ', psnr_list)
 print('SSIM: ', ssim_list)
 print('Times: ', times_list)
-# print('PSNR noisy: ', psnr_noisy_list)
-# print('SSIM noisy: ', ssim_noisy_list)
+print('PSNR noisy: ', psnr_noisy_list)
+print('SSIM noisy: ', ssim_noisy_list)
